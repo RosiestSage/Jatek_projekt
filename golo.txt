@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 Golópakolgatás szín szerint üvegcsékbe
 Pl van 4 üveg, 3 féle színű golyó randomolva az üvegekben. Akkor van kész a szint amikor az egyszínű labdák egy üvegbe kerülnek.
 
 
 Cím   		Nehézségi szintek    			Szintek
+=======
+Golópakolgatás szín szerint üvegcsékbe
+Pl van 4 üveg, 3 féle színű golyó randomolva az üvegekben. Akkor van kész a szint amikor az egyszínű labdák egy üvegbe kerülnek.
+
+
+Cím   		Nehézségi szintek    			Szintek
+>>>>>>> 3944c4200a28751d59a0bb5ecd1df4bf0644ed30
 		Easy,Med,Hard		Nehézségi szintenként 5 szint

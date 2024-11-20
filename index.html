@@ -1,11 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Üveges Golyós Játék</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <h1>Pakold a golyókat az üvegekbe!</h1>
+    <div class="container">
+        <div class="bottle" id="bottle1" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div class="ball red" id="ball1" draggable="true" ondragstart="drag(event)"></div>
+            <div class="ball blue" id="ball2" draggable="true" ondragstart="drag(event)"></div>
+            <div class="ball green" id="ball3" draggable="true" ondragstart="drag(event)"></div>
+            <div class="ball red" id="ball4" draggable="true" ondragstart="drag(event)"></div>
+            <div class="ball blue" id="ball5" draggable="true" ondragstart="drag(event)"></div>
+            <div class="ball green" id="ball6" draggable="true" ondragstart="drag(event)"></div>
+        </div>
+        
+        <div class="bottle" id="bottle2" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <!-- Üres üveg -->
+        </div>
+
+        <div class="bottle" id="bottle3" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <!-- Üres üveg -->
+        </div>
+
+        <div class="bottle" id="bottle4" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <!-- Üres üveg -->
+        </div>
+    </div>
+
+    <div id="message"></div>
+    <script src="script.js"></script>
 </body>
 </html>
