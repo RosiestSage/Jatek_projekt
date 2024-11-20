@@ -1,0 +1,6 @@
+Golópakolgatás szín szerint üvegcsékbe
+Pl van 4 üveg, 3 féle színű golyó randomolva az üvegekben. Akkor van kész a szint amikor az egyszínű labdák egy üvegbe kerülnek.
+
+
+Cím   		Nehézségi szintek    			Szintek
+		Easy,Med,Hard		Nehézségi szintenként 5 szint
