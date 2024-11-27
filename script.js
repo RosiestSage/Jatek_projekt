@@ -159,7 +159,15 @@ function allowDrop(event) {
 }
 
 function drag(event) {
-    event.dataTransfer.setData("text", event.target.id);
+    const pDiv = event.target.parentElement;
+    const firstItem = pDiv.firstChild;
+    if (event.target.parentElement.firstChild != event.target) {
+        event.preventDefault();
+        return;
+    }
+    else {
+        event.dataTransfer.setData("text", event.target.id);
+    }
 }
 
 function drop(event) {
