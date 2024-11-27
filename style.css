@@ -40,3 +40,134 @@ body {
     color: green;
     font-weight: bold;
 }
+
+
+
+/*hátéemel*/
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 ;
+    padding: 0;
+}
+
+
+
+.keret{
+    position: relative;
+    display: flex;
+    height: 700px;
+    width: 1200px;
+    border-radius: 50px;
+}
+
+.ballzkep{
+    width: 1200px;
+    text-align: start;
+
+}
+
+.golo{
+    height: 100px;
+}
+
+#open_page{
+    position: absolute;
+    border: 3px solid black;
+    border-radius: 50px;
+    background-image: url(Kepek/Nyito\ oldal\ hatter.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+    width: 100%;
+}
+
+#fo_oldal{
+    height: 700px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#fo_oldal .golo{
+    height: 150px;
+}
+
+#fo_oldal button{
+    margin-top: 50px;
+    padding: 10px;
+    border-radius: 25px;
+    height: 100px;
+    width: 200px;
+    background-color: green;
+    font-size: 50px;
+    border: 1px solid black;
+    box-shadow: 3px 3px 5px black, inset 3px 3px 10px black ;
+
+}
+
+.bevezeto_szoveg{
+    font-size: 30px;
+    padding: 0 100px;
+}
+
+#difficulty{
+    position: absolute;
+    display: none;
+    border: 3px solid black;
+    border-radius: 50px;
+    background-image: url(Kepek/Difficulty\ hatter.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+    width: 100%;
+}
+
+#nehezseg{
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+#levels{
+    position: absolute;
+    display: none;
+    border: 3px solid black;
+    border-radius: 50px;
+    background-image: url(Kepek/Level\ hatter.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+    width: 100%;
+}
+
+#szintek{
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+#gameplay{
+    position: absolute;
+    display: none;
+    border: 3px solid black;
+    border-radius: 50px;
+    background-image: url(Kepek/Jatek_hatter.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+    width: 100%;
+}
+
+#jatekmenet{
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
