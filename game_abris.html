@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Üveges Golyós Játék</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Pakold a golókat az üvegekbe!</h1>
+    <p>nehézség:</p>
+    <button onclick="setDifficulty(1)">Könnyű</button>
+    <button onclick="setDifficulty(2)">Közepes</button>
+    <button onclick="setDifficulty(3)">Nehéz</button>
+
+    <p>szint:</p>
+    <button onclick="selectLevel(1)">1</button>
+    <button onclick="selectLevel(2)">2</button>
+    <button onclick="selectLevel(3)">3</button>
+    <button onclick="selectLevel(4)">4</button>
+    <button onclick="selectLevel(5)">5</button>
+
+    <div class="container"></div>
+
+    <div id="message"></div>
+    <script src="script.js"></script>
+</body>
+</html>
