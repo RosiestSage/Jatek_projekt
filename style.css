@@ -33,6 +33,9 @@ body {
 .red { background-color: red; }
 .blue { background-color: blue; }
 .green { background-color: green; }
+.yellow { background-color: yellow; }
+.purple { background-color: purple; }
+.orange { background-color: orange; }
 
 #message {
     margin-top: 20px;
@@ -40,3 +43,4 @@ body {
     color: green;
     font-weight: bold;
 }
+
