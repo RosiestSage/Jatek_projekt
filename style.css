@@ -66,6 +66,7 @@ body{
     border-radius: 50px;
 }
 
+/* Nyito oldal*/
 .ballzkep{
     width: 1200px;
     text-align: start;
@@ -117,6 +118,8 @@ body{
     padding: 0 100px;
 }
 
+
+/* Difficulty*/
 #difficulty{
     position: absolute;
     display: none;
@@ -136,6 +139,7 @@ body{
     align-items: end;
 }
 
+/* Levels*/
 #levels{
     position: absolute;
     display: none;
@@ -155,6 +159,8 @@ body{
     align-items: end;
 }
 
+
+/* Játék*/
 #gameplay{
     position: absolute;
     display: none;
