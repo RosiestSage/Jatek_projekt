@@ -131,7 +131,7 @@ function setDifficulty(selectedDifficulty) {
 }
 
 function selectLevel(level) {
-    generateGame(difficulty, level, bottles, balls);
+    generateGame(difficulty, level, bottles, balls)
 }
 
 function generateGame(difficulty, level, bottles, balls) {

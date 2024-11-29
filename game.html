@@ -12,7 +12,7 @@
     </div>
 
     <div class="keret">
-        <div id="open_page">
+        <!-- <div id="open_page">
             <div id="fo_oldal">
                 <img src="Kepek/Goló.png" class="golo">
                 <button onclick="tovabb(2)">Play</button>
@@ -33,14 +33,46 @@
                 <button onclick="tovabb(4)">Tovább</button>
                 <button onclick="vissza(2)">Vissza</button>
             </div>
-        </div>
+        </div> -->
 
         <div id="gameplay">
             <div id="jatekmenet">
-                <div class="navbar">
-                    <img src="Kepek/Menu.png" alt="">
-                </div>
-                <button onclick="vissza(3)">Vissza</button>
+
+                <nav class="navbar">
+                    <img src="Kepek/Menu.png" >
+                    <div id="statok">
+                        <p>Difficulty: <span id="diff">Könnyű</span></p>
+                        <p>Level: <span id="level">1</span></p>
+                    </div>
+                </nav>
+
+                <section class="jatek">
+                    <!-- 4, 6, 7 -->
+                     <div class="golóhordozó">
+                        <div class="lid"></div>
+                        <div class="glass"></div>
+                     </div>
+
+                     <div class="golóhordozó">
+                        <div class="lid"></div>
+                        <div class="glass"></div>
+                     </div>
+
+                     <div class="golóhordozó">
+                        <div class="lid"></div>
+                        <div class="glass"></div>
+                     </div>
+
+                     <div class="golóhordozó">
+                        <div class="lid"></div>
+                        <div class="glass"></div>
+                     </div>
+
+                </section>
+
+                <button class="ujra" onclick="reload()">
+                    <img src="Kepek/refresh.png" alt="">
+                </button>
             </div>
         </div>
 

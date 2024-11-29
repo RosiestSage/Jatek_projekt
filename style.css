@@ -163,7 +163,7 @@ body{
 /* Játék*/
 #gameplay{
     position: absolute;
-    display: none;
+    display: block;
     border: 3px solid black;
     border-radius: 50px;
     background-image: url(Kepek/Jatek_hatter.jpg);
@@ -177,5 +177,110 @@ body{
     height: 700px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.navbar{
+    width: 1140px;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar img{
+    height: 100px;
+}
+
+.navbar img:hover{
+    background-color: #a58f8f;
+    cursor: pointer;
+}
+
+#statok{
+    display: flex;
+}
+
+#statok p{
+    font-size: 30px;
+    padding-right: 40px;
+    margin-right: 70px;
+}
+
+#diff{
+    color: grey;
+    opacity: 0.8;
+}
+
+#level{
+    color: grey;
+    opacity: 0.8;
+}
+
+.jatek{
+    width: 1160px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+    padding-bottom: 0;
+    height: 450px;
+    display: flex;
     align-items: end;
+    justify-content: space-around;
+
+}
+
+
+.golóhordozó{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.lid{
+    background-image: url(Kepek/Üvegcseteteje.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 3px solid black;
+
+    border-radius: 30px;
+    margin-bottom: -20px;
+    z-index: 1;
+    width: 160px;
+    height: 30px;
+}
+
+.glass{
+    margin: 0 10px;
+    height: 380px;
+    width: 120px;
+    background-color: #5DC7FC;
+    opacity: 0.49;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border: 5px solid black;
+    box-shadow: inset 10px 10px 30px black ;
+
+}
+
+.ujra{
+    height: 70px;
+    width: 70px;
+    border-radius: 70px;
+    border: 3px solid black;
+    background-color: #B9A8A8;
+
+}
+
+.ujra img{
+    height: 40px;
+    width: 40px;
+}
+
+.ujra:hover{
+    background-color: #a58f8f;
+    cursor: pointer;
 }
