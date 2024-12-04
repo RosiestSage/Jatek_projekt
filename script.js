@@ -1,4 +1,6 @@
-let levels = [
+const colors = ['red', 'green', 'blue', 'yellow', 'purple', 'orange'];
+
+const levels = [
     [ // konnyu
         [
             ['red', 'green', 'blue'],
@@ -159,8 +161,11 @@ function allowDrop(event) {
 }
 
 function drag(event) {
-    const pDiv = event.target.parentElement;
-    const firstItem = pDiv.firstChild;
+    if (checkStatus()) {
+        event.preventDefault();
+        return;
+    }
+
     if (event.target.parentElement.firstChild != event.target) {
         event.preventDefault();
         return;
@@ -177,16 +182,47 @@ function drop(event) {
     const droppedBall = document.getElementById(data);
     const targetBottle = event.target;
 
-    console.log(event.dataTransfer.getData("text"));
-    
-
-    if (targetBottle.classList.contains('bottle') && targetBottle !== droppedBall.parentElement) {
-        const targetBalls = targetBottle.getElementsByClassName('ball');
-        
-        if (targetBalls.length === 0) {
-            targetBottle.appendChild(droppedBall);
-        } else {
-            targetBottle.insertBefore(droppedBall, targetBottle.firstChild);
+    if (targetBottle.getElementsByClassName('ball').length != balls) {
+        if (targetBottle.classList.contains('bottle') && targetBottle !== droppedBall.parentElement) {
+            const targetBalls = targetBottle.getElementsByClassName('ball');
+            
+            if (targetBalls.length === 0) {
+                targetBottle.appendChild(droppedBall);
+            }
+            else {
+                targetBottle.insertBefore(droppedBall, targetBottle.firstChild);
+            }
         }
     }
+    else {
+        return;
+    }
+    console.log(checkStatus());
+}
+
+function checkStatus() {
+    const currentBottles = document.getElementsByClassName("bottle");
+    
+    for (let index = 0; index < currentBottles.length; index++) {
+        console.log(index);
+        
+        let currentBalls = currentBottles[index].getElementsByClassName("ball");
+        
+        if (currentBalls.length > 1) {
+            let firstColor = currentBalls[0].classList[1];
+        
+            for (let indexB = 0; indexB < currentBalls.length; indexB++) {
+                if (currentBalls[indexB].classList[1] != firstColor) {
+                    return false;
+                }
+            }
+        }
+        else if (currentBalls.length == 0) {
+            break;
+        }
+        else {
+            return false;  
+        }
+    }
+    return true;
 }
