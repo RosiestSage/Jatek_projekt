@@ -12,6 +12,7 @@
     </div>
 
     <div class="keret">
+    <!---
         <div id="open_page">
             <div id="fo_oldal">
                 <img src="Kepek/Goló.png" class="golo">
@@ -39,7 +40,7 @@
                 <button>Tovább</button>
                 <button onclick="vissza(2)">Vissza</button>
             </div>
-        </div> 
+        </div> -->
 
         <div id="gameplay">
             <div id="jatekmenet">
@@ -56,7 +57,26 @@
                     <!-- 4, 6, 7 -->
                      <div class="golóhordozó">
                         <div class="lid"></div>
-                        <div class="glass"></div>
+                        <div class="glass" id="elso" onclick="szamolas()">
+                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div>
+
+                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div>
+
+                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div>
+
+                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div>
+
+                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div>
+
+                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div>
+
+                        </div>
                      </div>
 
                      <div class="golóhordozó">
@@ -73,6 +93,8 @@
                         <div class="lid"></div>
                         <div class="glass"></div>
                      </div>
+
+                     
 
                 </section>
 

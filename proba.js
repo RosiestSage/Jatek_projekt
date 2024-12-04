@@ -52,3 +52,8 @@ function vissza(elem){
             break;
     }
 }
+
+function szamolas(){
+    var element = document.getElementById("elso");
+    console.log(element.childElementCount);
+}
