@@ -235,6 +235,7 @@ body{
 
 
 .lid{
+    z-index: 1;
     background-image: url(Kepek/Üvegcseteteje.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -283,6 +284,7 @@ body{
 
 /* menu */
 #menu{
+    z-index: 2;
     position: absolute;
     display: none;
     align-items: center;

@@ -110,6 +110,9 @@ const levels = [
     ]
 ];
 
+const pages = ["open_page","difficulty", "levels", "gameplay", "menu"];
+
+
 let bottles = 0;
 let balls = 0;
 let difficulty;
@@ -269,19 +272,18 @@ function reloading(difficulty, level) {
 //david js
 
 function tovabb(elem, dif){
-    let lista = ["open_page","difficulty", "levels", "gameplay"];
     switch (elem){
         case 2:
-            document.getElementById(lista[elem - 2]).style.display = 'none';
-            document.getElementById(lista[elem -1]).style.display = 'block';
+            document.getElementById(pages[elem - 2]).style.display = 'none';
+            document.getElementById(pages[elem -1]).style.display = 'block';
             break;
         case 3:
-            document.getElementById(lista[elem - 2]).style.display = 'none';
-            document.getElementById(lista[elem - 1]).style.display = 'block';
+            document.getElementById(pages[elem - 2]).style.display = 'none';
+            document.getElementById(pages[elem - 1]).style.display = 'block';
             break;
         case 4:
-            document.getElementById(lista[elem - 2]).style.display = 'none';
-            document.getElementById(lista[elem - 1]).style.display = 'block';
+            document.getElementById(pages[elem - 2]).style.display = 'none';
+            document.getElementById(pages[elem - 1]).style.display = 'block';
             break;
     }
     if (typeof dif === 'string'){
@@ -339,20 +341,40 @@ function tovabb(elem, dif){
     }
 
 function vissza(elem){
-    let lista = ["open_page","difficulty", "levels", "gameplay"];
+    document.getElementById("menu").innerHTML = "";
+    document.getElementById("menu").innerHTML = '<img src="Kepek/Goló.png" class="golo">';
     document.getElementById('menu').style.display = 'flex';
     switch (elem){
         case 2:
             
+            document.getElementById("menu").innerHTML  += '<button onclick="backToDifficulty()"> Back to difficulty</button>';
 
             // document.getElementById(lista[elem - 1]).style.display = 'block';
             // document.getElementById(lista[elem]).style.display = 'none';
             break;        
         case 3:
-            document.getElementById("menu").innerHTML  += '<button> Back to levels</button>' + '<button> Back to difficulty</button>' + '<button> Back to game</button>';
+            document.getElementById("menu").innerHTML  += '<button onclick="backToLevel()"> Back to levels</button>' + '<button onclick="backToDifficulty()"> Back to difficulty</button>' + '<button onclick="backToGame()"> Back to game</button>';
             // document.getElementById(lista[elem - 1]).style.display = 'block';
             // document.getElementById(lista[elem]).style.display = 'none';
 
             break;
     }
+}
+
+function backToLevel(){
+    document.getElementById("menu").style.display = "none";
+    document.getElementById("levels").style.display = 'block';
+    document.getElementById("gameplay").style.display = 'none';
+}
+
+function backToDifficulty(){
+    document.getElementById("menu").style.display = "none";
+    document.getElementById("difficulty").style.display = 'block';
+    document.getElementById("levels").style.display = 'none';
+    document.getElementById("gameplay").style.display = 'none';
+}
+
+function backToGame(){
+    document.getElementById("menu").style.display = "none";
+
 }
