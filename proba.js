@@ -29,6 +29,7 @@ const levels = [
             ['blue', 'green', 'red']
         ]          
     ],
+
     [ // kozepes
         [
             ['green', 'blue', 'red', 'yellow', 'purple'],
@@ -66,6 +67,7 @@ const levels = [
             ['purple', 'red', 'yellow', 'green', 'blue']
           ]
     ],
+
     [ // nehez
         [
             ['red', 'green', 'blue', 'yellow', 'purple', 'orange'],
@@ -144,6 +146,8 @@ function selectLevel(level) {
 function generateGame(difficulty, level, bottles, balls) {
     let containerDiv = document.getElementById("jatek");
     containerDiv.innerHTML = "";
+    // document.getElementById('diff').innerHTML = asd;
+    document.getElementById('level').innerHTML = level;
 
     let pattern = [];
     let lastindex = 0;
@@ -203,22 +207,55 @@ function drop(event) {
     else {
         return;
     }
-    console.log(checkStatus());
+    //console.log(checkStatus());
+     
+    if (checkStatus()){
+        document.getElementById('menu').style.display = 'flex';
+        document.getElementById('menu').innerHTML = '<h1>Well done!</h1>';
+        document.getElementById("menu").innerHTML  += '<button onclick="Next()"> <p>Következő szint</p></button>';
+
+    }
 }
 
 function checkStatus() {
     const currentBottles = document.getElementsByClassName("bottle");
-    
+    // console.log(currentBottles.length);
+
+    let jo = false;
+    const Bottles = document.getElementsByClassName("glass");
+    let finalCheck = 0;
+    for (let checkindex = 0; checkindex < Bottles.length; checkindex++){
+        let check = 0;
+        let currentBalls = Bottles[checkindex].getElementsByClassName("ball");
+        for (let j = 0; j < currentBalls.length; j++){
+            if (j != currentBalls.length -1){
+                if (currentBalls[j].className == currentBalls[j+1].className){
+                    check +=1;
+                }
+            }
+            if (check == 2){
+                finalCheck += 1;
+            }
+        }
+        console.log(finalCheck);
+    }
+
+    if (finalCheck == 6){
+        jo = true;
+    }
+
+
+
     for (let index = 0; index < currentBottles.length; index++) {
         
         let currentBalls = currentBottles[index].getElementsByClassName("ball");
+        //console.log(currentBalls[0].classList[1])
         
         if (currentBalls.length > 1) {
             let firstColor = currentBalls[0].classList[1];
-        
             for (let indexB = 0; indexB < currentBalls.length; indexB++) {
                 if (currentBalls[indexB].classList[1] != firstColor) {
-                    return false;
+                    return jo;
                 }
             }
         }
@@ -226,25 +263,29 @@ function checkStatus() {
             break;
         }
         else {
-            return false;  
+            return jo;  
         }
     }
-    return true;
+
+    return jo;
 }
+
+//david js
+
 
 //reload
 
 function reload(){
-    reloading(difficulty, level);
+    load(difficulty, level);
 
 }
 
-function reloading(difficulty, level) {
+function load(difficulty, level) {
+    console.log(difficulty);
     generateGame(difficulty, level, bottles, balls);
     switch (difficulty){
         case 1:
             golok = document.getElementsByClassName('ball');
-            console.log(golok)
             for (let i = 0; i < golok.length; i++){
                 golok[i].style.width = '100px';
                 golok[i].style.height = '100px';
@@ -269,7 +310,7 @@ function reloading(difficulty, level) {
     }
 }
 
-//david js
+//menu
 
 function tovabb(elem, dif){
     switch (elem){
@@ -286,6 +327,7 @@ function tovabb(elem, dif){
             document.getElementById(pages[elem - 1]).style.display = 'block';
             break;
     }
+
     if (typeof dif === 'string'){
         switch (dif){
             case 'Easy':
@@ -297,14 +339,14 @@ function tovabb(elem, dif){
             case 'Hard':
                 difficulty = 3;
                 break;
-        }
-        setDifficulty(difficulty);
+                
+            }
         document.getElementById('diff').innerHTML = dif;
+        setDifficulty(difficulty);
     }
     else{
         level = dif;
         selectLevel(level);
-        document.getElementById('level').innerHTML = level;
 
     }
     if (elem == 4){
@@ -313,7 +355,6 @@ function tovabb(elem, dif){
         switch (element.childElementCount){
             case 4:
                 golok = document.getElementsByClassName('ball');
-                console.log(golok)
                 for (let i = 0; i < golok.length; i++){
                     golok[i].style.width = '100px';
                     golok[i].style.height = '100px';
@@ -338,7 +379,7 @@ function tovabb(elem, dif){
             }
         
         }
-    }
+}
 
 function vissza(elem){
     document.getElementById("menu").innerHTML = "";
@@ -347,13 +388,13 @@ function vissza(elem){
     switch (elem){
         case 2:
             
-            document.getElementById("menu").innerHTML  += '<button onclick="backToDifficulty()"> Back to difficulty</button>';
+            document.getElementById("menu").innerHTML  += '<button onclick="backToDifficulty()"> <p>Back to difficulty</p></button>';
 
             // document.getElementById(lista[elem - 1]).style.display = 'block';
             // document.getElementById(lista[elem]).style.display = 'none';
             break;        
         case 3:
-            document.getElementById("menu").innerHTML  += '<button onclick="backToLevel()"> Back to levels</button>' + '<button onclick="backToDifficulty()"> Back to difficulty</button>' + '<button onclick="backToGame()"> Back to game</button>';
+            document.getElementById("menu").innerHTML  += '<button onclick="backToLevel()"> <p>Back to levels</p></button>' + '<button onclick="backToDifficulty()"><p> Back to difficulty</p></button>' + '<button onclick="backToGame()"><p> Back to game</p></button>';
             // document.getElementById(lista[elem - 1]).style.display = 'block';
             // document.getElementById(lista[elem]).style.display = 'none';
 
@@ -377,4 +418,41 @@ function backToDifficulty(){
 function backToGame(){
     document.getElementById("menu").style.display = "none";
 
+}
+
+function Next(){
+    document.getElementById('menu').style.display = 'none';
+    let dif;
+    
+    if (level != 5){
+        load(difficulty, ++level);
+        console.log(level);
+    }
+    else{
+        if (difficulty != 3){
+            ++difficulty;
+            level = 1;
+            setDifficulty(difficulty)
+            load(difficulty, level);
+            console.log(difficulty);
+
+        }
+        else{
+            difficulty += 1;
+            console.log("szex");
+        }
+    }
+
+    switch (difficulty){
+        case 1:
+            dif = 'Easy';
+            break;
+        case 2:
+            dif = 'Medium';
+            break;
+        case 3:
+            dif = 'Hard';
+            break;
+        }
+    document.getElementById('diff').innerHTML = dif;
 }

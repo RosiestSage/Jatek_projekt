@@ -264,6 +264,7 @@ body{
 }
 
 .ujra{
+    margin-top: 10px;
     height: 70px;
     width: 70px;
     border-radius: 70px;
@@ -302,6 +303,19 @@ body{
     margin: 20px;
     height: 100px;
     width: 300px;
+    border-radius: 30px;
+    box-shadow: 3px 3px 5px black, inset 5px 5px 10px black ;
+}
+
+#menu button:hover{
+    cursor: pointer;
+    box-shadow: 3px 3px 5px black, inset 7px 7px 15px black ;
+
+
+}
+
+#menu button p{
+    font-size: 30px;
 }
 
 @keyframes menu{
