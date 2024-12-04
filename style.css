@@ -11,17 +11,6 @@ body {
     margin-top: 30px;
 }
 
-.bottle {
-    width: 150px;
-    height: 300px;
-    border: 2px solid #333;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    overflow: hidden;
-}
-
 .ball {
     box-sizing: border-box;
     margin: 2px;
