@@ -241,7 +241,6 @@ body{
     border: 3px solid black;
     border-radius: 30px;
     margin-bottom: -5px;
-    z-index: 1;
     width: 160px;
     height: 30px;
 }
@@ -280,4 +279,20 @@ body{
 .ujra:hover{
     background-color: #a58f8f;
     cursor: pointer;
+}
+
+/* menu */
+#menu{
+    position: absolute;
+    display: block;
+    border: 3px solid black;
+    border-radius: 50px;
+    background-color: rgba(0, 128, 0, 0.8);
+    height: 700px;
+    width: 100%;
+    animation-name: menu;
+}
+
+@keyframes menu{
+    
 }
