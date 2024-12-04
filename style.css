@@ -284,13 +284,22 @@ body{
 /* menu */
 #menu{
     position: absolute;
-    display: block;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     border: 3px solid black;
     border-radius: 50px;
-    background-color: rgba(0, 128, 0, 0.8);
+    background-color: rgba(0, 128, 0, 0.9);
     height: 700px;
     width: 100%;
     animation-name: menu;
+}
+
+#menu button{
+    margin: 20px;
+    height: 100px;
+    width: 300px;
 }
 
 @keyframes menu{
