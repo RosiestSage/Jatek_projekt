@@ -12,7 +12,7 @@
     </div>
 
     <div class="keret">
-        <!-- <div id="open_page">
+        <div id="open_page">
             <div id="fo_oldal">
                 <img src="Kepek/Goló.png" class="golo">
                 <button onclick="tovabb(2)">Play</button>
@@ -23,17 +23,23 @@
         </div>
 
         <div id="difficulty"> 
-            <div id="nehezseg">
-                <button onclick="tovabb(3)">Tovább</button>
-            </div>
+            <button onclick="tovabb(3, 'Easy')">ízi</button>
+            <button onclick="tovabb(3, 'Medium')">médium</button>
+            <button onclick="tovabb(3, 'Hard')">hárd</button>
+
         </div>
 
         <div id="levels">
+            <button onclick="tovabb(4, 1)">1</button>
+            <button onclick="tovabb(4, 2)">2</button>
+            <button onclick="tovabb(4, 3)">3</button>
+            <button onclick="tovabb(4, 4)">4</button>
+            <button onclick="tovabb(4, 5)">5</button>
             <div id="szintek">
-                <button onclick="tovabb(4)">Tovább</button>
+                <button>Tovább</button>
                 <button onclick="vissza(2)">Vissza</button>
             </div>
-        </div> -->
+        </div> 
 
         <div id="gameplay">
             <div id="jatekmenet">
@@ -41,8 +47,8 @@
                 <nav class="navbar">
                     <img src="Kepek/Menu.png" >
                     <div id="statok">
-                        <p>Difficulty: <span id="diff">Könnyű</span></p>
-                        <p>Level: <span id="level">1</span></p>
+                        <p>Difficulty: <span id="diff"></span></p>
+                        <p>Level: <span id="level"></span></p>
                     </div>
                 </nav>
 

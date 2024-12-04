@@ -163,7 +163,7 @@ body{
 /* Játék*/
 #gameplay{
     position: absolute;
-    display: block;
+    display: none;
     border: 3px solid black;
     border-radius: 50px;
     background-image: url(Kepek/Jatek_hatter.jpg);
@@ -191,6 +191,8 @@ body{
 
 .navbar img{
     height: 100px;
+    box-sizing: border-box;
+    border-radius: 20px;
 }
 
 .navbar img:hover{

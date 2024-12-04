@@ -1,5 +1,7 @@
-function tovabb(elem){
+function tovabb(elem, dif){
     let lista = ["open_page","difficulty", "levels", "gameplay"];
+    let difficulty;
+    let level;
     switch (elem){
         case 2:
             document.getElementById(lista[elem - 2]).style.display = 'none';
@@ -13,6 +15,27 @@ function tovabb(elem){
             document.getElementById(lista[elem - 2]).style.display = 'none';
             document.getElementById(lista[elem - 1]).style.display = 'block';
             break;
+    }
+    if (typeof dif === 'string'){
+        switch (dif){
+            case 'Easy':
+                difficulty = 1;
+                break;
+            case 'Medium':
+                difficulty = 2;
+                break;
+            case 'Hard':
+                difficulty = 3;
+                break;
+        }
+        console.log(difficulty);
+        document.getElementById('diff').innerHTML = dif;
+    }
+    else{
+        level = dif;
+        console.log(level);
+        document.getElementById('level').innerHTML = level;
+
     }
 }
 
