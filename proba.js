@@ -230,17 +230,16 @@ function checkStatus() {
         for (let j = 0; j < currentBalls.length; j++){
             if (j != currentBalls.length -1){
                 if (currentBalls[j].className == currentBalls[j+1].className){
-                    check +=1;
+                    check += 1;
                 }
             }
-            if (check == 2){
-                finalCheck += 1;
-            }
         }
-        console.log(finalCheck);
+        if (check == Bottles.length - 2){
+            finalCheck += 1;
+        }
     }
 
-    if (finalCheck == 6){
+    if (finalCheck == Bottles.length - 1){
         jo = true;
     }
 
