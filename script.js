@@ -137,13 +137,14 @@ function selectLevel(level) {
 }
 
 function generateGame(difficulty, level, bottles, balls) {
-    let containerDiv = document.querySelector(".container");
+    let containerDiv = document.querySelector(".jatek");
     containerDiv.innerHTML = "";
 
     let pattern = [];
     let lastindex = 0;
     for (let index = 0; index < (bottles - 1); index++) {
-        containerDiv.innerHTML += '<div class="bottle" id="bottle' + index + '" ondrop="drop(event)" ondragover="allowDrop(event)">';
+        // containerDiv.innerHTML += '<div class="bottle" id="bottle' + index + '" ondrop="drop(event)" ondragover="allowDrop(event)">';
+        containerDiv.innerHTML += '<div class="golóhordozó bottle"><div class="lid"></div><div class="glass bottle" id="bottle' + index + '" ondrop="drop(event)" ondragover="allowDrop(event)"></div>';
 
         pattern = levels[difficulty - 1][level - 1][index];
         for (let indexB = 0; indexB < balls; indexB++) {
@@ -151,7 +152,7 @@ function generateGame(difficulty, level, bottles, balls) {
         }
         lastindex = index;
     }
-    containerDiv.innerHTML += '</div>' + '<div class="bottle" id="bottle' + (lastindex + 1) + '" ondrop="drop(event)" ondragover="allowDrop(event)">';
+    containerDiv.innerHTML += '</div>' + '<div class="golóhordozó bottle"><div class="lid"></div><div class="glass bottle" id="bottle' + (lastindex + 1) + '" ondrop="drop(event)" ondragover="allowDrop(event)"></div>';
 }
 
 // drop js
@@ -204,7 +205,6 @@ function checkStatus() {
     const currentBottles = document.getElementsByClassName("bottle");
     
     for (let index = 0; index < currentBottles.length; index++) {
-        console.log(index);
         
         let currentBalls = currentBottles[index].getElementsByClassName("ball");
         
@@ -225,4 +225,63 @@ function checkStatus() {
         }
     }
     return true;
+}
+
+function tovabb(elem, dif){
+    let lista = ["open_page","difficulty", "levels", "gameplay"];
+    let difficulty;
+    let level;
+    switch (elem){
+        case 2:
+            document.getElementById(lista[elem - 2]).style.display = 'none';
+            document.getElementById(lista[elem -1]).style.display = 'block';
+            break;
+        case 3:
+            document.getElementById(lista[elem - 2]).style.display = 'none';
+            document.getElementById(lista[elem - 1]).style.display = 'block';
+            break;
+        case 4:
+            document.getElementById(lista[elem - 2]).style.display = 'none';
+            document.getElementById(lista[elem - 1]).style.display = 'block';
+            break;
+    }
+    if (typeof dif === 'string'){
+        switch (dif){
+            case 'Easy':
+                difficulty = 1;
+                break;
+            case 'Medium':
+                difficulty = 2;
+                break;
+            case 'Hard':
+                difficulty = 3;
+                break;
+        }
+        setDifficulty(difficulty);
+        document.getElementById('diff').innerHTML = dif;
+    }
+    else{
+        level = dif;
+        selectLevel(level);
+        document.getElementById('level').innerHTML = level;
+
+    }
+}
+
+function vissza(elem){
+    let lista = ["open_page","difficulty", "levels", "gameplay"];
+    switch (elem){
+        case 2:
+            document.getElementById(lista[elem - 1]).style.display = 'block';
+            document.getElementById(lista[elem]).style.display = 'none';
+            break;        
+        case 3:
+            document.getElementById(lista[elem - 1]).style.display = 'block';
+            document.getElementById(lista[elem]).style.display = 'none';
+            break;
+    }
+}
+
+function reload() {
+    location.reload();
 }
