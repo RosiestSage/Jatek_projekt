@@ -37,7 +37,42 @@ function tovabb(elem, dif){
         document.getElementById('level').innerHTML = level;
 
     }
-}
+    if (elem == 4){
+        let element = document.getElementById("jatek");
+        console.log(element.childElementCount);
+        let golok;
+        switch (element.childElementCount){
+            case 4:
+                golok = document.getElementsByClassName('ball');
+                console.log(golok)
+                for (let i = 0; i < golok.length; i++){
+                    golok[i].style.backgroundColor = 'white';
+                    golok[i].style.width = '100px';
+                    golok[i].style.height = '100px';
+                }
+                break;
+            
+            case 6:
+                golok = document.getElementsByClassName('ball');
+                for (let i = 0; i < golok.length; i++){
+                    golok[i].style.backgroundColor = 'red';
+                    golok[i].style.width = '70px';
+                    golok[i].style.height = '70px';
+                }
+                break;
+
+            case 7:
+                golok = document.getElementsByClassName('ball');
+                for (let i = 0; i < golok.length; i++){
+                    golok[i].style.backgroundColor = 'green';
+                    golok[i].style.width = '60px';
+                    golok[i].style.height = '70px';
+                }
+                break;
+            }
+        
+        }
+    }
 
 function vissza(elem){
     let lista = ["open_page","difficulty", "levels", "gameplay"];
@@ -53,7 +88,7 @@ function vissza(elem){
     }
 }
 
-function szamolas(){
-    var element = document.getElementById("elso");
-    console.log(element.childElementCount);
-}
+// let gameplay = document.getElementById('gameplay');
+// if (gameplay.style.display = block){
+
+// }

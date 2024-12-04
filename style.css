@@ -24,11 +24,11 @@ body {
 
 .ball {
     box-sizing: border-box;
-    width: 80%;
-    height: 25%;
     margin: 2px;
     border-radius: 50%;
     cursor: pointer;
+    box-shadow: inset 10px 10px 30px black ;
+
 }
 
 .red { background-color: red; }
@@ -166,7 +166,7 @@ body{
 /* Játék*/
 #gameplay{
     position: absolute;
-    display: flex;
+    display: none;
     border: 3px solid black;
     border-radius: 50px;
     background-image: url(Kepek/Jatek_hatter.jpg);
@@ -192,13 +192,13 @@ body{
     align-items: center;
 }
 
-.navbar img{
+.hamburger{
     height: 100px;
     box-sizing: border-box;
     border-radius: 20px;
 }
 
-.navbar img:hover{
+.hamburger:hover{
     background-color: #a58f8f;
     cursor: pointer;
 }
@@ -223,7 +223,7 @@ body{
     opacity: 0.8;
 }
 
-.jatek{
+#jatek{
     width: 1160px;
     margin-left: 20px;
     margin-right: 20px;

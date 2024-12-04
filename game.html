@@ -12,7 +12,6 @@
     </div>
 
     <div class="keret">
-    <!---
         <div id="open_page">
             <div id="fo_oldal">
                 <img src="Kepek/Goló.png" class="golo">
@@ -31,29 +30,27 @@
         </div>
 
         <div id="levels">
+            <img class="hamburger" src="Kepek/Menu.png" onclick="vissza(2)">
+
             <button onclick="tovabb(4, 1)">1</button>
             <button onclick="tovabb(4, 2)">2</button>
             <button onclick="tovabb(4, 3)">3</button>
             <button onclick="tovabb(4, 4)">4</button>
             <button onclick="tovabb(4, 5)">5</button>
-            <div id="szintek">
-                <button>Tovább</button>
-                <button onclick="vissza(2)">Vissza</button>
-            </div>
-        </div> -->
+        </div>
 
         <div id="gameplay">
             <div id="jatekmenet">
 
                 <nav class="navbar">
-                    <img src="Kepek/Menu.png" >
+                    <img class="hamburger" src="Kepek/Menu.png" onclick="vissza(3)">
                     <div id="statok">
                         <p>Difficulty: <span id="diff"></span></p>
                         <p>Level: <span id="level"></span></p>
                     </div>
                 </nav>
 
-                <section class="jatek">
+                <section id="jatek">
                     <!-- 4, 6, 7 -->
                      <div class="golóhordozó">
                         <div class="lid"></div>
@@ -67,33 +64,123 @@
                             <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
                             </div>
 
-                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            <!-- <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
                             </div>
 
                             <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
-                            </div>
-
-                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
-                            </div>
+                            </div> -->
 
                         </div>
                      </div>
 
                      <div class="golóhordozó">
                         <div class="lid"></div>
-                        <div class="glass"></div>
+                        <div class="glass">
+                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div>
+
+                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div>
+
+                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div>
+
+                            <!-- <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div>
+
+                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div> -->
+                        </div>
                      </div>
 
                      <div class="golóhordozó">
                         <div class="lid"></div>
-                        <div class="glass"></div>
+                        <div class="glass">
+
+                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div>
+
+                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div>
+
+                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div>
+
+                            <!-- <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div>
+
+                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div> -->
+                        </div>
+                     </div>
+
+                     <!-- <div class="golóhordozó">
+                        <div class="lid"></div>
+                        <div class="glass">
+                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div>
+
+                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div>
+
+                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div>
+
+                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div>
+
+                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div>
+                        </div>
                      </div>
 
                      <div class="golóhordozó">
                         <div class="lid"></div>
+                        <div class="glass">
+                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div>
+
+                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div>
+
+                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div>
+
+                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div>
+
+                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div>
+                        </div>
+                     </div> 
+
+                     <div class="golóhordozó">
+                        <div class="lid"></div>
+                        <div class="glass">
+                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div>
+
+                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div>
+
+                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div>
+
+                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div>
+
+                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div>
+                        
+                            <div class="ball red" id="ball" draggable="true" ondragstart="drag(event)">
+                            </div> 
+                        </div>
+                     </div> -->
+                     
+                     <div class="golóhordozó">
+                        <div class="lid"></div>
                         <div class="glass"></div>
                      </div>
-
                      
 
                 </section>
