@@ -119,6 +119,7 @@ let bottles = 0;
 let balls = 0;
 let difficulty;
 let level;
+let counter = 0;
 
 function setDifficulty(selectedDifficulty) {
     difficulty = selectedDifficulty;
@@ -207,19 +208,30 @@ function drop(event) {
     else {
         return;
     }
-    //console.log(checkStatus());
      
     if (checkStatus()){
-        document.getElementById('menu').style.display = 'flex';
-        document.getElementById('menu').innerHTML = '<h1>Well done!</h1>';
-        document.getElementById("menu").innerHTML  += '<button onclick="Next()"> <p>Következő szint</p></button>';
-        /*
-            console.log("szex");
+        ++counter;
+        document.getElementById('menu').innerHTML = '';
+        if (counter == levels[0].length *3){
             document.getElementById('menu').style.display = 'flex';
-            document.getElementById('menu').innerHTML = '';
             document.getElementById('menu').innerHTML = '<h1>Game over</h1>';
-            document.getElementById("menu").innerHTML  += '<button onclick="Next()"> <p>Random mapek vagy mittomén majd megoldjuk jan 8-ig xd</p></button>';
-        */
+            // document.getElementById("menu").innerHTML  += '<button onclick="Next()"> <p>Random mapek vagy mittomén majd megoldjuk jan 8-ig xd</p></button>';
+        }
+        else{
+            if (difficulty == 3 && level == levels[0].length){
+                document.getElementById('menu').style.display = 'flex';
+                document.getElementById('menu').innerHTML = '<h1>Well done!</h1>';
+                document.getElementById('menu').innerHTML += '<h2>Try out the other levels!</h2>';
+                document.getElementById("menu").innerHTML  += '<button onclick="backToLevel()"> <p>Back to levels</p></button>' + '<button onclick="backToDifficulty()"><p> Back to difficulty</p></button>';
+
+            }
+            else{
+                document.getElementById('menu').style.display = 'flex';
+                document.getElementById('menu').innerHTML = '<h1>Well done!</h1>';
+                document.getElementById("menu").innerHTML  += '<button onclick="Next()"> <p>Következő szint</p></button>';
+            }
+        }
+
 
     }
 }
@@ -228,7 +240,7 @@ function checkStatus() {
     const currentBottles = document.getElementsByClassName("bottle");
     // console.log(currentBottles.length);
 
-    let jo = false;
+    let status = false;
     const Bottles = document.getElementsByClassName("glass");
     let finalCheck = 0;
     for (let checkindex = 0; checkindex < Bottles.length; checkindex++){
@@ -247,7 +259,7 @@ function checkStatus() {
     }
 
     if (finalCheck == Bottles.length - 1){
-        jo = true;
+        status = true;
     }
 
 
@@ -261,7 +273,7 @@ function checkStatus() {
             let firstColor = currentBalls[0].classList[1];
             for (let indexB = 0; indexB < currentBalls.length; indexB++) {
                 if (currentBalls[indexB].classList[1] != firstColor) {
-                    return jo;
+                    return status;
                 }
             }
         }
@@ -269,11 +281,11 @@ function checkStatus() {
             break;
         }
         else {
-            return jo;  
+            return status;  
         }
     }
 
-    return jo;
+    return status;
 }
 
 //david js
@@ -287,7 +299,6 @@ function reload(){
 }
 
 function load(difficulty, level) {
-    console.log(difficulty);
     generateGame(difficulty, level, bottles, balls);
     switch (difficulty){
         case 1:
@@ -408,23 +419,6 @@ function vissza(elem){
     }
 }
 
-function backToLevel(){
-    document.getElementById("menu").style.display = "none";
-    document.getElementById("levels").style.display = 'block';
-    document.getElementById("gameplay").style.display = 'none';
-}
-
-function backToDifficulty(){
-    document.getElementById("menu").style.display = "none";
-    document.getElementById("difficulty").style.display = 'block';
-    document.getElementById("levels").style.display = 'none';
-    document.getElementById("gameplay").style.display = 'none';
-}
-
-function backToGame(){
-    document.getElementById("menu").style.display = "none";
-
-}
 
 function Next(){
     document.getElementById('menu').style.display = 'none';
@@ -432,7 +426,6 @@ function Next(){
     
     if (level != 5){
         load(difficulty, ++level);
-        console.log(level);
     }
     else{
         if (difficulty != 3){
@@ -440,7 +433,6 @@ function Next(){
             level = 1;
             setDifficulty(difficulty)
             load(difficulty, level);
-            console.log(difficulty);
 
         }
         else{
@@ -460,4 +452,22 @@ function Next(){
             break;
         }
     document.getElementById('diff').innerHTML = dif;
+}
+
+function backToLevel(){
+    document.getElementById("menu").style.display = "none";
+    document.getElementById("levels").style.display = 'block';
+    document.getElementById("gameplay").style.display = 'none';
+}
+
+function backToDifficulty(){
+    document.getElementById("menu").style.display = "none";
+    document.getElementById("difficulty").style.display = 'block';
+    document.getElementById("levels").style.display = 'none';
+    document.getElementById("gameplay").style.display = 'none';
+}
+
+function backToGame(){
+    document.getElementById("menu").style.display = "none";
+
 }
