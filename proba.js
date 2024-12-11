@@ -213,6 +213,13 @@ function drop(event) {
         document.getElementById('menu').style.display = 'flex';
         document.getElementById('menu').innerHTML = '<h1>Well done!</h1>';
         document.getElementById("menu").innerHTML  += '<button onclick="Next()"> <p>Következő szint</p></button>';
+        /*
+            console.log("szex");
+            document.getElementById('menu').style.display = 'flex';
+            document.getElementById('menu').innerHTML = '';
+            document.getElementById('menu').innerHTML = '<h1>Game over</h1>';
+            document.getElementById("menu").innerHTML  += '<button onclick="Next()"> <p>Random mapek vagy mittomén majd megoldjuk jan 8-ig xd</p></button>';
+        */
 
     }
 }
@@ -437,8 +444,7 @@ function Next(){
 
         }
         else{
-            difficulty += 1;
-            console.log("szex");
+
         }
     }
 
