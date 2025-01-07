@@ -124,11 +124,35 @@ body{
     width: 100%;
 }
 
-#nehezseg{
-    height: 700px;
+
+.nehezseg{
+    margin-top: 5%;
     display: flex;
-    justify-content: center;
-    align-items: end;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nehezseg p{
+    font-size: 100px;
+    margin: 0 0 30px;
+}
+
+.nehezseg button{
+    font-size: 60px;
+    margin: 1.5%;
+    padding: 10px;
+    width: 600px;
+    height: 125px;
+    border: 2px solid black;
+    border-radius: 30px;
+    box-shadow: 3px 3px 5px black, inset 5px 5px 15px black ;
+    background-color: lightgrey;
+}
+
+.nehezseg button:hover{
+    box-shadow: 3px 3px 5px black, inset 7px 7px 15px black ;
+    cursor: pointer;
 }
 
 /* Levels*/
