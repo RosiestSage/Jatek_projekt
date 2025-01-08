@@ -24,20 +24,28 @@
         </div>
 
         <div id="difficulty"> 
-            <button onclick="tovabb(3, 'Easy')">ízi</button>
-            <button onclick="tovabb(3, 'Medium')">médium</button>
-            <button onclick="tovabb(3, 'Hard')">hárd</button>
-
+            <div class="nehezseg">
+                <p>Difficulty</p>
+                <button onclick="tovabb(3, 'Easy')">Easy</button>
+                <button onclick="tovabb(3, 'Medium')">Medium</button>
+                <button onclick="tovabb(3, 'Hard')">Hard</button>
+            </div>
         </div>
 
         <div id="levels">
-            <img class="hamburger" src="Kepek/Menu.png" onclick="vissza(2)">
-
-            <button onclick="tovabb(4, 1)">1</button>
-            <button onclick="tovabb(4, 2)">2</button>
-            <button onclick="tovabb(4, 3)">3</button>
-            <button onclick="tovabb(4, 4)">4</button>
-            <button onclick="tovabb(4, 5)">5</button>
+            <div id="szintek">
+                <div id="hamburger">
+                    <img class="hamburger" src="Kepek/Menu.png" onclick="vissza(2)">
+                </div>
+                    <div><p>Levels</p></div>
+                <div>
+                    <button onclick="tovabb(4, 1)">1</button>
+                    <button onclick="tovabb(4, 2)">2</button>
+                    <button onclick="tovabb(4, 3)">3</button>
+                    <button onclick="tovabb(4, 4)">4</button>
+                    <button onclick="tovabb(4, 5)">5</button>
+                </div>
+            </div>
         </div>
 
         <div id="gameplay">
